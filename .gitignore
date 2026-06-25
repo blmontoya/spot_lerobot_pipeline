@@ -1,0 +1,11 @@
+# Ignore python virtual environments and cache
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Ignore LeRobot datasets and model checkpoints
+datasets/
+outputs/
+training_outputs/
+.cache/

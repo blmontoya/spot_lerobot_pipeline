@@ -35,8 +35,7 @@ def main():
         connections = [x for x in reader.connections if x.topic == "/joint_states"]
         
         for connection, timestamp, rawdata in tqdm(reader.messages(connections=connections), desc="Processing Bag"):
-            
-            # The reader now decodes it for you directly!
+
             msg = reader.deserialize(rawdata, connection.msgtype)
             
             current_state = np.array(msg.position, dtype=np.float32)
